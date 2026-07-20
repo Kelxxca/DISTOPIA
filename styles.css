@@ -1,0 +1,1922 @@
+
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700;800&display=swap');
+
+
+/*==========================
+      VARIABLES
+===========================*/
+
+:root{
+
+    --color-negro:#111111;
+    --color-blanco:#FFFFFF;
+    --color-gris:#f5f5f5;
+    --color-gris-claro:#ebebeb;
+    --color-gris-texto:#6d6d6d;
+
+    --fuente:'Montserrat',sans-serif;
+
+    --sombra:0px 8px 25px rgba(0,0,0,.08);
+
+    --transicion:.35s;
+
+}
+
+
+/*==========================
+      RESET
+===========================*/
+
+*{
+
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+
+}
+
+html{
+
+    scroll-behavior:smooth;
+
+}
+
+body{
+
+    font-family:var(--fuente);
+
+    background:var(--color-blanco);
+
+    color:var(--color-negro);
+
+    line-height:1.6;
+
+}
+
+img{
+
+    width:100%;
+
+    display:block;
+
+}
+
+ul{
+
+    list-style:none;
+
+}
+
+a{
+
+    text-decoration:none;
+
+    color:inherit;
+
+}
+
+button{
+
+    cursor:pointer;
+
+    border:none;
+
+    font-family:inherit;
+
+}
+
+section{
+
+    width:100%;
+
+}
+
+main{
+
+    width:100%;
+
+}
+
+
+/*==========================
+     CONTENEDOR GENERAL
+===========================*/
+
+.container{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+}
+
+
+/*==========================
+       TOP BAR
+===========================*/
+
+.top-bar{
+
+    width:100%;
+
+    background:black;
+
+    color:white;
+
+    text-align:center;
+
+    padding:10px;
+
+    font-size:.82rem;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+
+    text-transform:uppercase;
+
+}
+
+/*==========================
+      HEADER
+===========================*/
+
+.logo-header{
+
+    display:flex;
+    justify-content:center;
+    padding:25px 0 20px;
+
+}
+
+.logo-header img{
+    width:500px; 
+    max-width:100%;
+}
+
+
+/*==========================
+      NAVBAR
+===========================*/
+
+.navbar{
+
+    width:90%;
+    max-width:1400px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:1fr auto;
+
+    align-items:center;
+
+    padding:20px 0;
+
+    border-bottom:1px solid #ececec;
+
+}
+
+.menu-centro{
+
+    display:flex;
+
+    justify-content:center;
+
+}
+
+/*=========================================
+            MENÚ TIPO CÁPSULAS
+==========================================*/
+
+.menu{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:18px;
+    flex-wrap:wrap;
+
+}
+
+.menu li{
+
+    list-style:none;
+
+}
+
+.menu li a{
+
+    display:flex;
+    justify-content:center;
+    align-items:center;
+
+    padding:12px 26px;
+
+    background:#ffffff;
+
+    color:#111111;
+
+    border:2px solid #111111;
+
+    border-radius:999px;
+
+    font-size:.9rem;
+
+    font-weight:600;
+
+    letter-spacing:1px;
+
+    transition:.35s ease;
+
+}
+
+.menu li a:hover{
+
+    background:#111111;
+
+    color:#ffffff;
+
+    transform:translateY(-2px);
+
+    box-shadow:0 10px 20px rgba(0,0,0,.12);
+
+}
+
+.menu li a.activo{
+
+    background:#111111;
+    color:#ffffff;
+    border:2px solid #111111;
+
+}
+
+.nav-icons{
+    display:flex;
+    align-items:center;
+    gap:12px; /* menos separación entre iconos */
+    justify-self:end;
+}
+
+.nav-icons img{
+    width:34px;   /* antes 21px o 30px */
+    height:34px;
+    transition:.3s;
+}
+
+.nav-icons img:hover{
+    transform:scale(1.1);
+}
+
+/*=====================================
+        MENÚ DESPLEGABLE
+======================================*/
+
+.dropdown{
+
+    position:relative;
+
+}
+
+.submenu{
+
+    position:absolute;
+
+    top:120%;
+
+    left:0;
+
+    min-width:220px;
+
+    background:#ffffff;
+
+    border:1px solid #dddddd;
+
+    border-radius:20px;
+
+    box-shadow:0 15px 35px rgba(0,0,0,.08);
+
+    opacity:0;
+
+    visibility:hidden;
+
+    transform:translateY(15px);
+
+    transition:.35s;
+
+    padding:12px 0;
+
+    z-index:1000;
+
+}
+
+.dropdown:hover .submenu{
+
+    opacity:1;
+
+    visibility:visible;
+
+    transform:translateY(0);
+
+}
+
+.submenu li{
+
+    width:100%;
+
+}
+
+.submenu li a{
+
+    display:block;
+
+    padding:14px 22px;
+
+    border:none;
+
+    border-radius:0;
+
+    background:transparent;
+
+    color:#111;
+
+    font-size:.9rem;
+
+    font-weight:500;
+
+    transition:.3s;
+
+}
+
+.submenu li a:hover{
+
+    background:#111;
+
+    color:white;
+
+}
+
+/*==========================
+          HERO
+===========================*/
+
+.hero{
+
+    position:relative;
+
+    width:100%;
+    height:520px;
+
+    overflow:hidden;
+
+}
+
+
+/* IMAGEN DE FONDO */
+
+.hero-bg{
+
+    position:absolute;
+
+    width:100%;
+    height:100%;
+
+    object-fit:cover;
+
+    top:0;
+    left:0;
+
+}
+
+
+
+/* TEXTO ENCIMA */
+
+.hero-text{
+
+    position:absolute;
+
+    right:18%;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:white;
+
+    z-index:2;
+
+}
+
+
+
+.hero-text h2{
+
+    text-align:center;
+
+    font-size:18px;
+
+    font-weight:300;
+
+    letter-spacing:3px;
+
+    margin-bottom:15px;
+
+.premium-overlay h2{
+    color:#ffffff;
+    font-size:3.5rem;
+    font-weight:900;
+    margin-bottom:18px;
+    text-shadow:0 4px 12px rgba(0,0,0,0.45);
+}
+}
+
+
+
+.hero-text h1{
+
+    font-size:110px;
+
+    line-height:.85;
+
+    font-weight:900;
+
+    letter-spacing:-5px;
+
+    margin:0;
+
+    .premium-overlay h2{
+    color:#ffffff;
+    font-size:3.5rem;
+    font-weight:900;
+    margin-bottom:18px;
+    text-shadow:0 4px 12px rgba(0,0,0,0.45);
+}
+
+}
+
+
+
+.btn-ver{
+
+    position:absolute;
+
+    right:-160px;
+
+    bottom:30px;
+
+    background:#c40000;
+
+    color:white;
+
+    padding:12px 45px;
+
+    border-radius:50px;
+
+    text-decoration:none;
+
+    font-size:22px;
+
+}
+
+
+/*==========================
+      HERO INFO
+===========================*/
+
+.hero-info{
+
+    width:90%;
+
+    max-width:1400px;
+
+    margin:auto;
+
+    display:grid;
+
+    grid-template-columns:repeat(4,1fr);
+
+    gap:30px;
+
+    padding:45px 0;
+
+}
+
+
+.hero-info article{
+
+    text-align:center;
+
+    padding:20px;
+
+}
+
+
+.hero-info h3{
+
+    margin-bottom:12px;
+
+    font-size:1rem;
+
+    font-weight:700;
+
+    letter-spacing:1px;
+
+}
+
+
+.hero-info p{
+
+    font-size:.9rem;
+
+    color:var(--color-gris-texto);
+
+}
+
+
+/*==========================
+      FEEDBACK
+===========================*/
+
+/* FEEDBACK FLOTANTE */
+
+.feedback {
+    position: fixed;
+
+    right: 55px;
+    bottom: 120px;
+
+    z-index: 999;
+
+    display: flex;
+    align-items: center;
+}
+
+/* CÁPSULA ROJA */
+
+.feedback button {
+
+    width: 160px; /* aumentamos el ancho */
+    height: 45px;
+
+    border: none;
+    border-radius: 50px;
+
+    background: #d90404;
+
+    color: white;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    letter-spacing: 2px;
+    text-transform: uppercase;
+
+    cursor: pointer;
+
+    padding-right: 45px; /* deja espacio para el círculo */
+}
+
+/* CÍRCULO GRANDE */
+
+.feedback-circle{
+    position:absolute;
+    right:-55px;
+    width:95px;
+    height:95px;
+    border-radius:50%;
+    background:#d90404;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    overflow:visible;
+}
+
+.feedback-circle img{
+    width:150px;   /* icono más grande */
+    height:150px;
+    object-fit:contain;
+    position:static; /* elimina el posicionamiento absoluto */
+}
+
+/*======================================================
+        SECCIÓN TODO LO NUEVO
+======================================================*/
+
+.nuevos{
+
+    width:90%;
+    max-width:1400px;
+    margin:90px auto;
+
+}
+
+.titulo-seccion{
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    margin-bottom:50px;
+    border-bottom:1px solid var(--color-gris-claro);
+    padding-bottom:18px;
+
+}
+
+.titulo-seccion h2{
+
+    font-size:2rem;
+    font-weight:800;
+    letter-spacing:3px;
+
+}
+
+.titulo-seccion p{
+
+    font-size:.95rem;
+    color:var(--color-gris-texto);
+    letter-spacing:4px;
+    font-weight:600;
+
+}
+
+
+/*======================================================
+            GRID DE PRODUCTOS
+======================================================*/
+
+.productos{
+
+    display:grid;
+    grid-template-columns:repeat(4,1fr);
+    gap:35px;
+
+}
+
+
+/*======================================================
+                CARD PRODUCTO
+======================================================*/
+
+.card-producto{
+
+    background:white;
+    transition:.35s;
+    overflow:hidden;
+
+}
+
+.card-producto:hover{
+
+    transform:translateY(-10px);
+
+}
+
+.card-producto img{
+
+    width:100%;
+    height:430px;
+    object-fit:cover;
+    background:#efefef;
+
+}
+
+/* =======================================================
+   VENTANAS DE PRODUCTOS IGUAL A LA CAPTURA
+======================================================= */
+
+.info-producto{
+    background:#000000; /* franja negra */
+    padding:16px 20px 18px;
+    color:#ffffff;
+    text-align:left;
+}
+
+.info-producto h3{
+    font-size:1rem;
+    font-weight:800;
+    margin-bottom:8px;
+    line-height:1.2;
+    text-transform:uppercase;
+}
+
+.precio{
+    font-size:.95rem;
+    color:#ffffff;
+    margin-bottom:14px;
+    font-weight:400;
+}
+
+.btn-comprar{
+    display:block;
+    width:170px;
+    margin:0 auto;
+    text-align:center;
+    background:#b30000;
+    color:#ffffff;
+    padding:10px 0;
+    border-radius:50px; /* cápsula roja */
+    font-weight:800;
+    font-size:1rem;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    transition:.3s;
+}
+
+.btn-comprar:hover{
+    background:#d00000;
+    transform:translateY(-2px);
+}
+
+
+/*======================================================
+            PRODUCTO DESTACADO
+======================================================*/
+
+.producto-destacado{
+
+    width:90%;
+    max-width:1400px;
+    margin:120px auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+
+}
+
+.destacado-imagen img{
+
+    width:100%;
+    border-radius:4px;
+
+}
+
+.destacado-info{
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+}
+
+.destacado-info h2{
+
+    font-size:2.8rem;
+    font-weight:800;
+    margin-bottom:20px;
+
+}
+
+.precio-grande{
+
+    font-size:2rem;
+    font-weight:700;
+    margin-bottom:35px;
+
+}
+
+.btn-agregar{
+
+    display:inline-block;
+    width:220px;
+    text-align:center;
+    padding:18px;
+    background:black;
+    color:white;
+    font-weight:700;
+    transition:.3s;
+
+}
+
+.btn-agregar:hover{
+
+    background:#2e2e2e;
+
+}
+
+.texto-extra{
+
+    margin-top:35px;
+    color:var(--color-gris-texto);
+    font-size:1rem;
+
+}
+
+
+/*======================================================
+            FAVORITOS
+======================================================*/
+
+.favoritos{
+
+    width:90%;
+    max-width:1400px;
+    margin:120px auto;
+
+    display:grid;
+    grid-template-columns:45% 55%;
+    gap:70px;
+    align-items:center;
+
+}
+
+.favoritos-texto{
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+}
+
+.favoritos-texto h2{
+
+    font-size:2rem;
+    font-weight:800;
+    margin-bottom:25px;
+
+}
+
+.favoritos-texto h3{
+
+    font-size:3rem;
+    line-height:1.1;
+    margin-bottom:25px;
+
+}
+
+.favoritos-texto p{
+
+    font-size:1.1rem;
+    color:var(--color-gris-texto);
+    margin-bottom:40px;
+    max-width:420px;
+
+}
+
+.btn-descubrir{
+
+    display:inline-block;
+    width:220px;
+    text-align:center;
+    background:black;
+    color:white;
+    padding:18px;
+    font-weight:700;
+    letter-spacing:2px;
+    transition:.3s;
+
+}
+
+.btn-descubrir:hover{
+
+    background:#2f2f2f;
+
+}
+
+.favoritos-imagen img{
+
+    width:100%;
+    border-radius:4px;
+    object-fit:cover;
+
+}
+
+
+/*======================================================
+        EFECTOS GENERALES
+======================================================*/
+
+.card-producto,
+.destacado-imagen img,
+.favoritos-imagen img{
+
+    box-shadow:var(--sombra);
+
+}
+
+.card-producto img,
+.destacado-imagen img,
+.favoritos-imagen img{
+
+    transition:.45s;
+
+}
+
+.card-producto:hover img,
+.destacado-imagen:hover img,
+.favoritos-imagen:hover img{
+
+    transform:scale(1.03);
+
+}
+```
+```css
+/*======================================================
+                    PREMIUM
+======================================================*/
+
+.premium{
+
+    width:90%;
+    max-width:1400px;
+    margin:130px auto;
+
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:70px;
+    align-items:center;
+
+}
+
+.premium-imagen img{
+
+    width:100%;
+    border-radius:5px;
+    box-shadow:var(--sombra);
+
+}
+
+.premium-contenido{
+
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+
+}
+
+.premium-contenido h2{
+
+    font-size:3rem;
+    font-weight:800;
+    margin-bottom:30px;
+    letter-spacing:2px;
+
+}
+
+.premium-contenido p{
+
+    font-size:1.05rem;
+    color:var(--color-gris-texto);
+    margin-bottom:25px;
+    line-height:1.9;
+
+}
+
+.premium-contenido strong{
+
+    color:black;
+
+}
+
+
+/*======================================================
+                    FOOTER
+======================================================*/
+
+footer{
+
+    background:#111;
+    color:white;
+    margin-top:120px;
+
+}
+
+.footer-contenedor{
+
+    width:90%;
+    max-width:1400px;
+
+    margin:auto;
+
+    display:grid;
+    grid-template-columns:2fr 1fr 1fr;
+
+    gap:70px;
+
+    padding:80px 0;
+
+}
+
+.footer-logo img{
+
+    width:180px;
+    margin-bottom:25px;
+
+}
+
+.footer-logo p{
+
+    color:#cfcfcf;
+    line-height:1.8;
+    max-width:420px;
+
+}
+
+.footer-links h3,
+.footer-contacto h3{
+
+    margin-bottom:25px;
+    font-size:1.1rem;
+    letter-spacing:2px;
+
+}
+
+.footer-links ul li{
+
+    margin-bottom:18px;
+
+}
+
+.footer-links a{
+
+    color:#d7d7d7;
+    transition:.3s;
+
+}
+
+.footer-links a:hover{
+
+    color:white;
+
+}
+
+.footer-contacto p{
+
+    margin-bottom:15px;
+    color:#d7d7d7;
+
+}
+
+.copyright{
+
+    border-top:1px solid rgba(255,255,255,.1);
+
+    text-align:center;
+
+    padding:22px;
+
+    font-size:.9rem;
+
+    color:#bfbfbf;
+
+}
+
+
+/*======================================================
+            FORMULARIOS
+======================================================*/
+
+form{
+
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+
+}
+
+label{
+
+    font-weight:600;
+    font-size:.95rem;
+
+}
+
+input,
+textarea,
+select{
+
+    width:100%;
+
+    padding:15px;
+
+    border:1px solid #d9d9d9;
+
+    font-family:inherit;
+
+    font-size:1rem;
+
+    outline:none;
+
+    transition:.3s;
+
+}
+
+input:focus,
+textarea:focus,
+select:focus{
+
+    border-color:black;
+
+}
+
+textarea{
+
+    resize:vertical;
+    min-height:150px;
+
+}
+
+button[type="submit"]{
+
+    width:220px;
+
+    padding:18px;
+
+    background:black;
+
+    color:white;
+
+    font-weight:700;
+
+    transition:.3s;
+
+}
+
+button[type="submit"]:hover{
+
+    background:#2b2b2b;
+
+}
+
+
+/*======================================================
+            ACCESIBILIDAD
+======================================================*/
+
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus{
+
+    outline:3px solid #555;
+    outline-offset:3px;
+
+}
+
+img{
+
+    max-width:100%;
+    height:auto;
+
+}
+
+body{
+
+    text-rendering:optimizeLegibility;
+
+    -webkit-font-smoothing:antialiased;
+
+}
+
+
+/*======================================================
+                TABLET
+======================================================*/
+
+@media(max-width:992px){
+
+.navbar{
+
+    flex-direction:column;
+    gap:30px;
+
+}
+
+.menu{
+
+    gap:25px;
+    flex-wrap:wrap;
+    justify-content:center;
+
+}
+
+.hero,
+.producto-destacado,
+.favoritos,
+.premium{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+.hero-text,
+.destacado-info,
+.favoritos-texto,
+.premium-contenido{
+
+    align-items:center;
+
+}
+
+.hero-info{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.productos{
+
+    grid-template-columns:repeat(2,1fr);
+
+}
+
+.footer-contenedor{
+
+    grid-template-columns:1fr;
+
+    text-align:center;
+
+}
+
+.footer-logo p{
+
+    margin:auto;
+
+}
+
+}
+
+
+/*======================================================
+                MÓVIL
+======================================================*/
+
+@media(max-width:768px){
+
+.hero{
+
+    margin-top:40px;
+
+}
+
+.hero-text h1{
+
+    font-size:3rem;
+
+}
+
+.hero-text h2{
+
+    font-size:1.4rem;
+
+}
+
+.titulo-seccion{
+
+    flex-direction:column;
+    gap:15px;
+
+}
+
+.productos{
+
+    grid-template-columns:1fr;
+
+}
+
+.hero-info{
+
+    grid-template-columns:1fr;
+
+}
+
+.destacado-info h2,
+.premium-contenido h2{
+
+    font-size:2rem;
+
+}
+
+.favoritos-texto h3{
+
+    font-size:2.2rem;
+
+}
+
+.btn-comprar,
+.btn-descubrir,
+.btn-agregar,
+.btn-ver{
+
+    width:100%;
+
+}
+
+.feedback{
+
+    right:15px;
+    bottom:20px;
+
+}
+
+}
+
+
+/*======================================================
+            MÓVILES PEQUEÑOS
+======================================================*/
+
+@media(max-width:480px){
+
+body{
+
+    font-size:15px;
+
+}
+
+.navbar{
+
+    padding:20px;
+
+}
+
+.logo img{
+
+    width:150px;
+
+}
+
+.menu{
+
+    flex-direction:column;
+    gap:15px;
+
+}
+
+.hero{
+
+    width:95%;
+
+}
+
+.hero-text h1{
+
+    font-size:2.4rem;
+
+    letter-spacing:2px;
+
+}
+
+.hero-text h2{
+
+    font-size:1.1rem;
+
+}
+
+.titulo-seccion h2{
+
+    font-size:1.5rem;
+
+}
+
+.favoritos-texto h3{
+
+    font-size:1.8rem;
+
+}
+
+.destacado-info h2{
+
+    font-size:1.7rem;
+
+}
+
+.premium-contenido h2{
+
+    font-size:1.8rem;
+
+}
+
+.footer-contenedor{
+
+    padding:60px 20px;
+
+}
+
+.footer-links ul li{
+
+    margin-bottom:12px;
+
+}
+
+}
+
+/* CHEVRON DE LAS CÁPSULAS */
+
+.chevron{
+
+    display:inline-block;
+
+    width:7px;
+    height:7px;
+
+    border-right:1.5px solid currentColor;
+    border-bottom:1.5px solid currentColor;
+
+    transform:rotate(45deg);
+
+    margin-left:10px;
+
+    margin-bottom:3px;
+
+    transition:.3s ease;
+
+}
+
+
+.dropdown:hover .chevron{
+
+    transform:rotate(225deg);
+
+    margin-bottom:-2px;
+
+}
+
+
+/* =======================================================
+   SECCIÓN VIDEO URBANO
+======================================================= */
+
+.seccion-video{
+    width:100%;
+    background:#f2f2f2;
+}
+
+.video-header{
+    background:#ffffff;
+    text-align:center;
+    padding:25px 20px 18px;
+    border-bottom:1px solid #e5e5e5;
+}
+
+.video-header h2{
+    font-size:3rem;
+    font-weight:300;
+    letter-spacing:2px;
+    margin-bottom:12px;
+    color:#111;
+}
+
+.video-info{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    gap:25px;
+    font-size:1.5rem;
+    font-weight:700;
+    color:#111;
+}
+
+.video-contenedor{
+    width:100%;
+    height:420px; /* altura del recuadro gris */
+    background:#e9e9e9;
+    overflow:hidden;
+}
+
+.video-urbano{
+    width:100%;
+    height:100%;
+    object-fit:cover; /* el video llena todo el recuadro */
+    display:block;
+    border:none;
+}
+
+/* Espacio EXACTO entre el video y el texto */
+.espacio-video-texto{
+    height:85px; /* ajusta este valor si quieres más o menos espacio */
+    background:#f2f2f2;
+}
+
+/* Ajuste de la sección TODO LO NUEVO */
+.nuevos{
+    margin-top:0;
+    padding-top:0;
+}
+
+/* =======================================================
+   CÁPSULAS NEW
+======================================================= */
+
+.card-producto{
+    position:relative;
+}
+
+.capsula-new{
+    position:absolute;
+    top:12px;        /* más abajo de la esquina */
+    right:16px;      /* separada del borde derecho */
+    background:#b30000;
+    color:#ffffff;
+    padding:5px 18px; /* más pequeña */
+    border-radius:50px;
+    font-size:.75rem; /* texto más pequeño */
+    font-weight:800;
+    letter-spacing:1px;
+    text-transform:uppercase;
+    z-index:10;
+    box-shadow:0 3px 8px rgba(0,0,0,.15);
+}
+
+/* =======================================================
+   VENTANA FLOTANTE DE RECOMENDACIÓN
+======================================================= */
+
+.recomendacion-flotante{
+    position:fixed;
+    left:30px; /* ahora en la esquina inferior izquierda */
+    bottom:30px;
+    width:360px;
+    background:#ffffff;
+    border-radius:22px;
+    overflow:hidden;
+    box-shadow:0 15px 35px rgba(0,0,0,.25);
+    z-index:1000;
+    opacity:0;
+    transform:translateY(30px);
+    transition:all .4s ease;
+    pointer-events:none;
+}
+
+.recomendacion-flotante.mostrar{
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+}
+
+.recomendacion-header{
+    background:#5a5a5a;
+    color:#ffffff;
+    text-align:center;
+    font-size:1.1rem;
+    font-weight:700;
+    padding:12px;
+}
+
+.recomendacion-imagenes{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+}
+
+.recomendacion-imagenes img{
+    width:100%;
+    height:180px;
+    object-fit:cover;
+}
+
+.recomendacion-info{
+    background:#000000;
+    color:#ffffff;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:14px 18px;
+}
+
+.recomendacion-texto h4{
+    font-size:1rem;
+    margin-bottom:4px;
+    font-weight:600;
+}
+
+.recomendacion-texto p{
+    font-size:.95rem;
+    color:#d9d9d9;
+}
+
+.btn-agregar-flotante{
+    background:#b30000;
+    color:#ffffff;
+    padding:10px 22px;
+    border-radius:50px;
+    font-weight:700;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn-agregar-flotante:hover{
+    background:#d00000;
+    transform:translateY(-2px);
+}
+
+@media(max-width:768px){
+
+    .recomendacion-flotante{
+        width:90%;
+        left:5%;
+        bottom:20px;
+    }
+
+    .recomendacion-imagenes img{
+        height:150px;
+    }
+}
+
+/* =======================================================
+   LO MÁS DESTACADO - FIEL A LA CAPTURA
+======================================================= */
+
+.destacado-captura{
+    width:100%;
+    background:#f2f2f2;
+    padding:40px 0 60px;
+}
+
+.destacado-titulo{
+    text-align:center;
+    font-size:2.5rem;
+    font-weight:900;
+    margin-bottom:25px;
+    color:#111;
+}
+
+.destacado-grid{
+    width:100%;
+    max-width:1400px;
+    margin:0 auto;
+    display:grid;
+    grid-template-columns:34% 18% 48%;
+    grid-template-rows:100px 230px;
+    gap:0;
+    align-items:stretch;
+}
+
+/* Imagen izquierda */
+
+.destacado-izquierda{
+    grid-column:1;
+    grid-row:1 / span 2;
+    overflow:hidden;
+}
+
+.destacado-izquierda img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* Panel gris central */
+
+.destacado-panel{
+    grid-column:2;
+    grid-row:1 / span 2;
+    background:#cfcfcf;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:flex-start;
+    padding:30px 25px;
+    color:#111;
+}
+
+.destacado-panel h3{
+    font-size:2rem;
+    font-weight:800;
+    line-height:1.1;
+    margin-bottom:20px;
+}
+
+.destacado-panel p{
+    font-size:1rem;
+    line-height:1.5;
+    margin-bottom:25px;
+    max-width:180px;
+}
+
+/* Imagen superior derecha */
+
+.destacado-superior{
+    grid-column:3;
+    grid-row:1;
+    overflow:hidden;
+}
+
+.destacado-superior img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* Imagen inferior derecha */
+
+.destacado-inferior{
+    grid-column:3;
+    grid-row:2;
+    position:relative;
+    overflow:hidden;
+}
+
+.destacado-inferior img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
+
+/* Overlay PREMIUM */
+
+.premium-overlay{
+    position:absolute;
+    inset:0;
+    display:flex;
+    flex-direction:column;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+}
+
+.premium-overlay h2{
+    color:#ffffff;
+    font-size:3.5rem;
+    font-weight:900;
+    margin-bottom:18px;
+    text-shadow:0 2px 10px rgba(0,0,0,.4);
+}
+
+/* Botón blanco */
+
+.btn-descubrir-captura{
+    display:inline-block;
+    background:#ffffff;
+    color:#555555;
+    padding:10px 28px;
+    border-radius:50px;
+    font-size:.8rem;
+    font-weight:600;
+    letter-spacing:1px;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.btn-descubrir-captura:hover{
+    transform:translateY(-2px);
+    box-shadow:0 6px 15px rgba(0,0,0,.15);
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+    .destacado-grid{
+        grid-template-columns:1fr;
+        grid-template-rows:auto auto auto auto;
+    }
+
+    .destacado-izquierda,
+    .destacado-panel,
+    .destacado-superior,
+    .destacado-inferior{
+        grid-column:auto;
+        grid-row:auto;
+    }
+
+    .destacado-panel{
+        align-items:center;
+        text-align:center;
+    }
+
+    .destacado-panel p{
+        max-width:100%;
+    }
+
+    .premium-overlay h2{
+        font-size:2.5rem;
+    }
+}
+
+/* =======================================================
+   FOOTER
+
+/* Puntos en Atención al Cliente */
+
+.footer-links ul{
+    padding-left:18px;
+}
+
+.footer-links ul li{
+    list-style:disc;
+    margin-bottom:12px;
+    color:#d7d7d7;
+}
+
+.footer-links ul li a{
+    color:#d7d7d7;
+    text-decoration:none;
+    transition:.3s;
+}
+
+.footer-links ul li a:hover{
+    color:#ffffff;
+}
+
+/* Contacto con iconos a la izquierda */
+
+.contacto-item{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    margin-bottom:15px;
+}
+
+.contacto-icono{
+    width:20px;
+    height:20px;
+    object-fit:contain;
+}
+
+/* Línea divisoria */
+
+.footer-linea{
+    width:100%;
+    height:2px;
+    background:#ffffff;
+    margin:20px 0;
+    opacity:.9;
+}
+
+/* Redes sociales abajo a la derecha */
+
+.footer-social{
+    display:flex;
+    justify-content:flex-end;
+    gap:18px;
+    margin-top:80px;
+}
+
+.footer-social img{
+    width:32px;
+    height:32px;
+    object-fit:contain;
+    transition:.3s;
+}
+
+.footer-social img:hover{
+    transform:scale(1.1);
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+    .footer-social{
+        justify-content:center;
+    }
+
+    .footer-linea{
+        margin:25px auto;
+    }
+}
+
+/* =======================================================
+   CAMBIO DE IMAGEN AL PASAR EL CURSOR
+======================================================= */
+
+.imagen-producto{
+    position:relative;
+    width:100%;
+    height:430px;
+    overflow:hidden;
+}
+
+.imagen-producto img{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    transition:opacity .4s ease;
+}
+
+/* Imagen principal visible */
+
+.img-principal{
+    opacity:1;
+}
+
+/* Imagen secundaria oculta */
+
+.img-hover{
+    opacity:0;
+}
+
+/* Al pasar el cursor */
+
+.card-producto:hover .img-principal{
+    opacity:0;
+}
+
+.card-producto:hover .img-hover{
+    opacity:1;
+}
+
+.subir-img{
+    transform: translateY(-20px);
+}
